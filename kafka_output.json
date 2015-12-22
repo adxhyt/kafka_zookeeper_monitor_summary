@@ -1,0 +1,457 @@
+{
+    "servers": [{
+        "port": "${myserverport}",
+        "host": "${myserverhost}",
+        "queries": [
+            {
+            	"outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/bufferPool_direct_stats.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "java.nio:type=BufferPool,name=direct",
+                "resultAlias": "KafkaMetricsBufferPool",
+                "attr": ["Count", "MemoryUsed", "TotalCapacity"]
+            },
+            {
+            	"outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/bufferPool_mapped_stats.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "java.nio:type=BufferPool,name=mapped",
+                "resultAlias": "KafkaMetricsBufferPool",
+                "attr": ["Count", "MemoryUsed", "TotalCapacity"]
+            },
+            {
+            	"outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/kafka_socketServer_stats.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "kafka.server:type=kafka.SocketServerStats",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["AvgFetchRequestMs", "AvgProduceRequestMs", "BytesReadPerSecond", "BytesWrittenPerSecond", "FetchRequestsPerSecond", "MaxFetchRequestMs", "MaxProduceRequestMs" , "NumFetchRequests" , "NumProduceRequests" , "ProduceRequestsPerSecond", "TotalBytesRead", "TotalBytesWritten", "TotalFetchRequestMs", "TotalProduceRequestMs"]
+            },
+        	{
+            	"outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/MemoryUsage.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "java.lang:type=Memory",
+                "resultAlias": "KafkaMetricsheap",
+                "attr": ["HeapMemoryUsage","NonHeapMemoryUsage"]
+            },
+        	{
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/MessagesInPerSec.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count","OneMinuteRate"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/BytesInPerSec.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count","OneMinuteRate"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/RequestsPerSecProduce.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce",
+                "resultAlias": "KafkaMetricsProduce",
+                "attr": ["Count","OneMinuteRate"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/BytesOutPerSec.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count","OneMinuteRate"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/LogFlushStats.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count","OneMinuteRate"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/UnderReplicatedPartitions.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Value"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/ActiveControllerCount.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.controller:type=KafkaController,name=ActiveControllerCount",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Value"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/LeaderElectionRateAndTimeMs.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count", "MeanRate"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/UncleanLeaderElectionsPerSec.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count", "MeanRate"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/PartitionCount.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.server:type=ReplicaManager,name=PartitionCount",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Value"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/LeaderCount.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.server:type=ReplicaManager,name=LeaderCount",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Value"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/IsrShrinksPerSec.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.server:type=ReplicaManager,name=IsrShrinksPerSec",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count", "MeanRate"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/ReplicaFetcherManager.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.server:type=ReplicaFetcherManager,name=MaxLag,clientId=Replica",
+                "resultAlias": "KafkaMetricsReplicaFetcherManager",
+                "attr": ["Value"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/ConsumerLag.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+				"obj": "kafka.server:type=FetcherLagMetrics,name=ConsumerLag,clientId=([-.\\w]+),topic=([-.\\w]+),partition=([0-9]+)",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Value"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/ProducerRequestPurgatory.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.server:type=ProducerRequestPurgatory,name=PurgatorySize",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Value"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/FetchRequestPurgatory.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.server:type=FetchRequestPurgatory,name=PurgatorySize",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Value"]
+            },
+            {
+                "outputWriters": [{
+                    "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/RequestTotalTimeMs.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count","Max","99thPercentile"]
+            },
+        	{
+                "outputWriters": [{
+                    "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/RequestQueueTimeMs.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "kafka.network:type=RequestMetrics,name=QueueTimeMs,request=*",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count","Max","99thPercentile"]
+            },
+            {
+                "outputWriters": [{
+                    "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/RequestRemoteTimeMs.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "kafka.network:type=RequestMetrics,name=RemoteTimeMs,request=Produce",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count","Max","99thPercentile"]
+            },
+            {
+                "outputWriters": [{
+                    "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/ResponseSendTimeMs.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "kafka.network:type=RequestMetrics,name=ResponseSendTimeMs,request=Produce",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count","Max","99thPercentile"]
+            },
+            {
+                "outputWriters": [{
+                    "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/ConsumerFetcherManagerMaxLag.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "kafka.consumer:type=ConsumerFetcherManager,name=MaxLag)",
+                "resultAlias": "KafkaMetricsConsumerFetcherManager",
+                "attr": ["Value"]
+            },
+            {
+                "outputWriters": [{
+                    "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/SocketServerAvgIdle.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count", "OneMinuteRate"]
+            },
+            {
+                "outputWriters": [{
+                    "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/KafkaRequestHandlerPoolAvgIdle.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Count", "OneMinuteRate"]
+            },
+            {
+                "outputWriters": [{
+                    "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
+						"outputFile" : "/jmxtrans/log/GarbageCollector.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                    }
+                }],
+                "obj": "java.lang:type=GarbageCollector,name=*",
+				"resultAlias": "KafkaMetricsGC",
+                "attr": ["CollectionCount","CollectionTime"]
+            }
+        ],
+        "numQueryThreads": 2
+    }]
+}
