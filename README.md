@@ -14,10 +14,13 @@ JMX_PORT=9999 ./kafka-server-start.sh ../config/server.properties &
 
 #### 通过mx4j-tools查看
 ```
-查看kafka源码 发现kafka/utils/Mx4jLoader.scala中存在通过load mx4j-tools.jar来实现MX4J的http调用
+查看kafka源码 发现kafka/utils/Mx4jLoader.scala中
+存在通过load mx4j-tools.jar来实现MX4J的http调用
 默认"mx4jport", 8082
 
-loadpath在kafka/libs目录下 将mx4j-3.0.2.jar 和 mx4j-tools-3.0.1.jar放到对应目录(主要起作用的应该是mx4j-tools-3.0.1.jar) 然后重启kafka broker 直接可以查看MX4J的页面
+loadpath在kafka/libs目录下 
+将mx4j-3.0.2.jar 和 mx4j-tools-3.0.1.jar放到对应目录(主要起作用的应该是mx4j-tools-3.0.1.jar) 
+然后重启kafka broker 直接可以查看MX4J的页面
 ```
 
 #### 通过jmxtrans查看
@@ -27,8 +30,8 @@ loadpath在kafka/libs目录下 将mx4j-3.0.2.jar 和 mx4j-tools-3.0.1.jar放到�
 ```
 
 #### jmxtrans操作步骤
-```
 安装jmxtrans步骤参见: [jmxtrans installation](https://github.com/jmxtrans/jmxtrans/wiki/Installation)
+```
 操作步骤
 1. 修改 kafka/bin/kaka-server-start.sh  添加jmx_port 如下：
       # new add for jmxtrans        
@@ -58,20 +61,18 @@ loadpath在kafka/libs目录下 将mx4j-3.0.2.jar 和 mx4j-tools-3.0.1.jar放到�
 ```
 
 #### kafka监控项描述
-```
 官方文档: [kafka monitoring](http://kafka.apache.org/documentation.html#monitoring)
-```
 
 ### zookeeper监控
-```
 官方文档: [zookeeper monitoring](http://zookeeper.apache.org/doc/trunk/zookeeperAdmin.html#sc_zkCommands)
-
+```
 The ZooKeeper service can be monitored in one of two primary ways; 1) the command port through the use of 4 letter words and 2) JMX.
 ```
 
 #### zookeeper 4 letter words 
 ```
 一个shell脚本解决
+```
 <pre><code>
 #!/bin/bash
 echo mntr | nc 127.0.0.1 2181 | egrep 'count|connections|latency' | while read metric value
@@ -80,7 +81,6 @@ do
 	echo $metric $value
 done
 </code></pre>
-```
 
 #### zookeeper JMX monitor 
 ```
