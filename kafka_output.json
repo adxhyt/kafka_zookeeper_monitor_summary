@@ -81,7 +81,7 @@
                 }],
                 "obj": "kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count","OneMinuteRate"]
+                "attr": ["OneMinuteRate"]
             },
             {
                 "outputWriters": [{
@@ -97,7 +97,7 @@
                 }],
                 "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count","OneMinuteRate"]
+                "attr": ["OneMinuteRate"]
             },
             {
                 "outputWriters": [{
@@ -113,7 +113,7 @@
                 }],
                 "obj": "kafka.network:type=RequestMetrics,name=RequestsPerSec,request=Produce",
                 "resultAlias": "KafkaMetricsProduce",
-                "attr": ["Count","OneMinuteRate"]
+                "attr": ["OneMinuteRate"]
             },
             {
                 "outputWriters": [{
@@ -129,7 +129,7 @@
                 }],
                 "obj": "kafka.server:type=BrokerTopicMetrics,name=BytesOutPerSec",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count","OneMinuteRate"]
+                "attr": ["OneMinuteRate"]
             },
             {
                 "outputWriters": [{
@@ -145,7 +145,7 @@
                 }],
                 "obj": "kafka.log:type=LogFlushStats,name=LogFlushRateAndTimeMs",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count","OneMinuteRate"]
+                "attr": ["OneMinuteRate","99thPercentile"]
             },
             {
                 "outputWriters": [{
@@ -193,7 +193,7 @@
                 }],
                 "obj": "kafka.controller:type=ControllerStats,name=LeaderElectionRateAndTimeMs",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count", "MeanRate"]
+                "attr": ["OneMinuteRate"]
             },
             {
                 "outputWriters": [{
@@ -209,7 +209,7 @@
                 }],
                 "obj": "kafka.controller:type=ControllerStats,name=UncleanLeaderElectionsPerSec",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count", "MeanRate"]
+                "attr": ["OneMinuteRate"]
             },
             {
                 "outputWriters": [{
@@ -257,7 +257,7 @@
                 }],
                 "obj": "kafka.server:type=ReplicaManager,name=IsrShrinksPerSec",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count", "MeanRate"]
+                "attr": ["OneMinuteRate"]
             },
             {
                 "outputWriters": [{
@@ -337,7 +337,7 @@
                 }],
                 "obj": "kafka.network:type=RequestMetrics,name=TotalTimeMs,request=Produce",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count","Max","99thPercentile"]
+                "attr": ["Mean","Max","99thPercentile"]
             },
         	{
                 "outputWriters": [{
@@ -353,7 +353,7 @@
                 }],
                 "obj": "kafka.network:type=RequestMetrics,name=QueueTimeMs,request=*",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count","Max","99thPercentile"]
+                "attr": ["Mean","Max","99thPercentile"]
             },
             {
                 "outputWriters": [{
@@ -369,7 +369,7 @@
                 }],
                 "obj": "kafka.network:type=RequestMetrics,name=RemoteTimeMs,request=Produce",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count","Max","99thPercentile"]
+                "attr": ["Mean","Max","99thPercentile"]
             },
             {
                 "outputWriters": [{
@@ -385,7 +385,7 @@
                 }],
                 "obj": "kafka.network:type=RequestMetrics,name=ResponseSendTimeMs,request=Produce",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count","Max","99thPercentile"]
+                "attr": ["Mean","Max","99thPercentile"]
             },
             {
                 "outputWriters": [{
@@ -417,7 +417,7 @@
                 }],
                 "obj": "kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count", "OneMinuteRate"]
+                "attr": ["OneMinuteRate"]
             },
             {
                 "outputWriters": [{
@@ -433,7 +433,7 @@
                 }],
                 "obj": "kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent",
                 "resultAlias": "KafkaMetrics",
-                "attr": ["Count", "OneMinuteRate"]
+                "attr": ["OneMinuteRate"]
             },
             {
                 "outputWriters": [{
