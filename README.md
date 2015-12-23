@@ -1,5 +1,10 @@
 ## kafka_zookeeper_monitor_summary
 the summary of work on kafka and zookeeper monitor
+```
+jdk version: 1.8.0_45
+kafka version: 2.10-0.8.2.1
+zookeeeper version: 3.4.6
+```
 
 ### kafka监控
 
