@@ -7,7 +7,7 @@
             	"outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/bufferPool_direct_stats.txt",
+						"outputFile" : "/home/work/jmxtrans/log/bufferPool_direct_stats.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -23,7 +23,7 @@
             	"outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/bufferPool_mapped_stats.txt",
+						"outputFile" : "/home/work/jmxtrans/log/bufferPool_mapped_stats.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -35,27 +35,11 @@
                 "resultAlias": "KafkaMetricsBufferPool",
                 "attr": ["Count", "MemoryUsed", "TotalCapacity"]
             },
-            {
-            	"outputWriters": [{
-                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-                    "settings": {
-						"outputFile" : "/jmxtrans/log/kafka_socketServer_stats.txt",
-          				"maxLogFileSize" : "10MB",
-          				"maxLogBackupFiles" : 3,
-          				"delimiter" : "\t",
-          				"debug" : true,
-          				"typeNames" : ["name"]
-                    }
-                }],
-                "obj": "kafka.server:type=kafka.SocketServerStats",
-                "resultAlias": "KafkaMetrics",
-                "attr": ["AvgFetchRequestMs", "AvgProduceRequestMs", "BytesReadPerSecond", "BytesWrittenPerSecond", "FetchRequestsPerSecond", "MaxFetchRequestMs", "MaxProduceRequestMs" , "NumFetchRequests" , "NumProduceRequests" , "ProduceRequestsPerSecond", "TotalBytesRead", "TotalBytesWritten", "TotalFetchRequestMs", "TotalProduceRequestMs"]
-            },
         	{
             	"outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/MemoryUsage.txt",
+						"outputFile" : "/home/work/jmxtrans/log/MemoryUsage.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -71,7 +55,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/MessagesInPerSec.txt",
+						"outputFile" : "/home/work/jmxtrans/log/MessagesInPerSec.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -87,7 +71,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/BytesInPerSec.txt",
+						"outputFile" : "/home/work/jmxtrans/log/BytesInPerSec.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -103,7 +87,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/RequestsPerSecProduce.txt",
+						"outputFile" : "/home/work/jmxtrans/log/RequestsPerSecProduce.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -119,7 +103,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/BytesOutPerSec.txt",
+						"outputFile" : "/home/work/jmxtrans/log/BytesOutPerSec.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -135,7 +119,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/LogFlushStats.txt",
+						"outputFile" : "/home/work/jmxtrans/log/LogFlushStats.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -151,7 +135,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/UnderReplicatedPartitions.txt",
+						"outputFile" : "/home/work/jmxtrans/log/UnderReplicatedPartitions.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -167,7 +151,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/ActiveControllerCount.txt",
+						"outputFile" : "/home/work/jmxtrans/log/ActiveControllerCount.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -183,7 +167,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/LeaderElectionRateAndTimeMs.txt",
+						"outputFile" : "/home/work/jmxtrans/log/LeaderElectionRateAndTimeMs.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -199,7 +183,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/UncleanLeaderElectionsPerSec.txt",
+						"outputFile" : "/home/work/jmxtrans/log/UncleanLeaderElectionsPerSec.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -215,7 +199,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/PartitionCount.txt",
+						"outputFile" : "/home/work/jmxtrans/log/PartitionCount.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -231,7 +215,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/LeaderCount.txt",
+						"outputFile" : "/home/work/jmxtrans/log/LeaderCount.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -247,7 +231,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/IsrShrinksPerSec.txt",
+						"outputFile" : "/home/work/jmxtrans/log/IsrShrinksPerSec.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -263,7 +247,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/ReplicaFetcherManager.txt",
+						"outputFile" : "/home/work/jmxtrans/log/ReplicaFetcherManager.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -279,7 +263,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/ConsumerLag.txt",
+						"outputFile" : "/home/work/jmxtrans/log/ConsumerLag.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -295,7 +279,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/ProducerRequestPurgatory.txt",
+						"outputFile" : "/home/work/jmxtrans/log/ProducerRequestPurgatory.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -311,7 +295,7 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/FetchRequestPurgatory.txt",
+						"outputFile" : "/home/work/jmxtrans/log/FetchRequestPurgatory.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -327,7 +311,7 @@
                 "outputWriters": [{
                     "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/RequestTotalTimeMs.txt",
+						"outputFile" : "/home/work/jmxtrans/log/RequestTotalTimeMs.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -343,7 +327,7 @@
                 "outputWriters": [{
                     "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/RequestQueueTimeMs.txt",
+						"outputFile" : "/home/work/jmxtrans/log/RequestQueueTimeMs.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -351,7 +335,7 @@
           				"typeNames" : ["name"]
                     }
                 }],
-                "obj": "kafka.network:type=RequestMetrics,name=QueueTimeMs,request=*",
+                "obj": "kafka.network:type=RequestMetrics,name=RequestQueueTimeMs,request=Produce",
                 "resultAlias": "KafkaMetrics",
                 "attr": ["Mean","Max","99thPercentile"]
             },
@@ -359,7 +343,7 @@
                 "outputWriters": [{
                     "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/RequestRemoteTimeMs.txt",
+						"outputFile" : "/home/work/jmxtrans/log/RequestRemoteTimeMs.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -375,7 +359,7 @@
                 "outputWriters": [{
                     "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/ResponseSendTimeMs.txt",
+						"outputFile" : "/home/work/jmxtrans/log/ResponseSendTimeMs.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -391,7 +375,7 @@
                 "outputWriters": [{
                     "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/ConsumerFetcherManagerMaxLag.txt",
+						"outputFile" : "/home/work/jmxtrans/log/ConsumerFetcherManagerMaxLag.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -399,7 +383,7 @@
           				"typeNames" : ["name"]
                     }
                 }],
-                "obj": "kafka.consumer:type=ConsumerFetcherManager,name=MaxLag)",
+                "obj": "kafka.consumer:type=ConsumerFetcherManager,name=MaxLag",
                 "resultAlias": "KafkaMetricsConsumerFetcherManager",
                 "attr": ["Value"]
             },
@@ -407,7 +391,7 @@
                 "outputWriters": [{
                     "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/SocketServerAvgIdle.txt",
+						"outputFile" : "/home/work/jmxtrans/log/SocketServerAvgIdle.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -423,7 +407,7 @@
                 "outputWriters": [{
                     "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/KafkaRequestHandlerPoolAvgIdle.txt",
+						"outputFile" : "/home/work/jmxtrans/log/KafkaRequestHandlerPoolAvgIdle.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
@@ -439,7 +423,7 @@
                 "outputWriters": [{
                     "@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
-						"outputFile" : "/jmxtrans/log/GarbageCollector.txt",
+						"outputFile" : "/home/work/jmxtrans/log/GarbageCollector.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
           				"delimiter" : "\t",
