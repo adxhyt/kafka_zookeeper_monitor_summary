@@ -167,6 +167,22 @@
                 "outputWriters": [{
                 	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
                     "settings": {
+						"outputFile" : "/home/work/jmxtrans/log/OfflinePartitionsCount.txt",
+          				"maxLogFileSize" : "10MB",
+          				"maxLogBackupFiles" : 3,
+          				"delimiter" : "\t",
+          				"debug" : true,
+          				"typeNames" : ["name"]
+                	}
+                }],
+                "obj": "kafka.controller:type=KafkaController,name=OfflinePartitionsCount",
+                "resultAlias": "KafkaMetrics",
+                "attr": ["Value"]
+            },
+            {
+                "outputWriters": [{
+                	"@class": "com.googlecode.jmxtrans.model.output.KeyOutWriter",
+                    "settings": {
 						"outputFile" : "/home/work/jmxtrans/log/LeaderElectionRateAndTimeMs.txt",
           				"maxLogFileSize" : "10MB",
           				"maxLogBackupFiles" : 3,
