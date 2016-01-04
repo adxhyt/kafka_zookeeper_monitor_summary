@@ -8,9 +8,9 @@ kafka version: 0.8.2.1
 Java Management Extensions, 管理系统和资源之间的一个接口，它定义了管理系统和资源之间交互的标准
 
 Managerment System <=> JMX <=> Resources
+```
 
 文档: [IBM JMX Description](http://www.ibm.com/developerworks/cn/java/j-lo-jse63/)
-```
 
 #### Kafka Metrics
 <table class="table table-bordered table-striped table-condensed">
